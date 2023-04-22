@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="monetization" content="$ilp.uphold.com/WUdKN2pAgLAG">
+    <link rel="shortcut icon" href="/images/" type="image/x-icon">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <title>Group Portfolio Website</title>
@@ -18,35 +19,25 @@
         <div class="navbar">
             <div class="logo-container">
                 <div ><a class="logo-text" href="#home">Team Firefly</a></div>
-             </div>
+            </div>
             <div class="nav-items">
-                <div><a href="#home" id="a-home">Mickey Home</a></div>
+                <div><a href="#home" id="a-home">Home</a></div>
                 <div><a href="#about" id="a-about">About Us</a></div>
                 <div><a href="#qualification" id="a-qualification">Qualification</a></div>
                 <div><a href="#projects" id="a-project">Projects</a></div>
                 <div><a href="#skills" id="a-skills">Skills</a></div>
                 <div> <a href="#contactus" id="a-contactus">Contact Us</a></div>
             </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+              </div>
         </div>
         <!--nav bar ends here-->
     </div>
+    
     <header class="header" id="home">
-        <!--Nav bar+ Hero section-->
-           <!-- <div class="navbar">
-                <div class="logo-container">
-                    <div class="logo-text">Team Firefly</div>
-                 </div>
-                
-                <div class="nav-items">
-                    <div><a href="#home" id="a-home">Home</a></div>
-                    <div><a href="#about" id="a-about">About</a></div>
-                    <div><a href="#qualification" id="a-qualification">Qualification</a></div>
-                    <div><a href="#projects" id="a-project">Projects</a></div>
-                    <div><a href="#skills" id="a-skills">Skills</a></div>
-                    <div> <a href="#contactus" id="a-contactus">Contact Us</a></div>
-                </div>
-            </div>-->
-            <!--nav bar ends here-->
             <!--Hero section starting-->
             <div class="hero-section">
                 <!--left side-->
@@ -61,8 +52,7 @@
                         We're Web Developers and here is our Portfolio Website. Here you'll learn about our journey as a Web Developers.
                     </div>
                     <!--<div class="hero-section-button" id="hero-section-btn">Contact Us </div>-->
-                    <div><button formaction=".contactus" style="--clr:#39FF14"><span>Hire Us</span><i></i></button></div>
-
+                    <div><button formaction="#contactus" onclick="window.location.href='#contactus'" style="--clr:#39FF14"><span>Contact Us</span><i></i></button></div>
                 </div>
                 <!--right side-->
                 <div>
@@ -359,28 +349,28 @@
         <h1 class="contactus-heading">Contact Us</h1>
         <h3 class="contactus-sub-heading">Questions, thoughts, or just want to say hello?</h3>
         <div class="contactus-form-container">
-          <form class="form" action="">
+          <form class="form"  action="https://formsubmit.co/6b94813f9e772cb4d3143ccf4a42ecac" target="_blank" method="post">
             <div class="formfield-container">
               <input class="formfield" 
               type="text" 
               name="name" 
-              id="" 
+              id="name" 
               placeholder="Enter your name" />
 
               <input class="formfield" 
               type="email" 
               name="email" 
-              id="" 
+              id="email" 
               placeholder="Enter your email address" />
 
               <input class="formfield" 
               type="text" 
               name="subject" 
-              id="" 
+              id="subject" 
               placeholder="Enter your subject" />
 
               <textarea name="message" 
-              id="" cols="30" rows="6" 
+              id="message" cols="30" rows="6" 
               class="formfield formfield-textarea"
               placeholder="Enter your message"></textarea>
             </div>
@@ -395,6 +385,7 @@
         <div class="contactus_empty"></div>
     </div>
     </section>
+    <!--Footer Section-->
     <footer>
         <div class="container">
           <div class="footer-wrapper">
@@ -431,30 +422,78 @@
           </div>
         </div>
       </footer>
+      <!--<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>-->
+      <!-- Scroll Top -->
+    <a href="#home" class="scrollup" id="scroll-up">
+        <i class="uil-arrow-up scrollup_icon"></i></a>
     </div>
-
-
-
-
-
-
-
+   
     <!--Roles In Hero Section JS-->
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <script src="https://kit.fontawesome.com/58a810656e.js" crossorigin="anonymous"></script>
-  <script>
-    var typeData = new Typed(".role", {
-      strings: [
-        "Full Stack Developers",
-        "Web Developers",
-        "UI-UX Designers",
-        "Coder",
-      ],
-      loop: true,
-      typeSpeed: 150,
-      backSpeed: 80,
-      backDelay: 1000,
-    });
+    <script src="https://kit.fontawesome.com/58a810656e.js" crossorigin="anonymous"></script>
+     <script>
+         var typeData = new Typed(".role", {
+             strings: [
+               "Full Stack Developers",
+               "Web Developers",
+               "UI-UX Designers",
+               "Coder",
+             ],
+             loop: true,
+             typeSpeed: 150,
+             backSpeed: 80,
+             backDelay: 1000,
+        });
   </script>
+  <script>
+  function scrollUpfunc() {
+    const scrollUp = document.getElementById("scroll-up");
+    if (this.scrollY >= 560) scrollUp.classList.add("show-scroll");
+    else scrollUp.classList.remove("show-scroll");
+}
+window.addEventListener("scroll", scrollUpfunc);
+</script>
+<script>
+    
+</script>
+<script>const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+    
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    });
+    
+    document.querySelectorAll(".nav-link").forEach((link) =>
+      link.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+      })
+    );
+    </script>
+
+<!--
+    <script>
+    // Get the button
+    let mybutton = document.getElementById("myBtn");
+    
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+    
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+    </script>
+-->
 </body>
 </html>
